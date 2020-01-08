@@ -250,7 +250,7 @@ The following conventions are employed in the fields of the output relating to G
 
 * [ = the vowel must be read after the associated consonant.
 * ] = the vowel must be read before the associated consonant.
-* > ... < = the vowel must be read either before (marked with > ) or after (marked with < ) the associated consonants, but not in both places.
+* \> ... < = the vowel must be read either before (marked with > ) or after (marked with < ) the associated consonants, but not in both places.
 
 * # = beginning of the word
 * $ = end of the word
