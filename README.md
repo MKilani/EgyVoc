@@ -41,11 +41,13 @@ Long stressed vowels:
 
 Short stressed vowels
 
-xxx
+![](images/short_vowels.jpg)
 
-Unstressed vowels
+Notes:
 
-xxx
+![](images/notes.jpg)
+
+Unstressed vowels are reduced to /ə/ during Period 2, or even earlier.
 
 
 ## Getting Started
