@@ -37,7 +37,7 @@ The underlying phonological rules are summarised in the following tables:
 
 Long stressed vowels:
 
-![](images/long_vowels.jpeg)
+![](images/long_vowels.jpg | width=100)
 
 Short stressed vowels
 
