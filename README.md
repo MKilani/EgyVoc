@@ -1,6 +1,6 @@
 # EgyVoc : an automatic vocalizer for Ancient Egyptian
 
-Version: 1.0
+Version: 0.0.4
 
 Release date: 08.01.2020
 
@@ -29,7 +29,7 @@ The format of the input and of the output is discussed here below.
 
 The algorithm is able to recongnize irregularities in the correspondes between the forms - in that case, an error message is output instead of the reconstruction.
 
-The possibility to use also data from other Coptic dialects and from W-orthography spellings (see Kilani xxx) will also be included in future releases.
+The possibility to use also data from other Coptic dialects and from W-orthography spellings (see [Kilani 2017](references/bibliography.md)) will also be included in future releases.
 
 The vocalization is reconstructed according to mainstream models (see E.g. Loprieno 1995), and the Group Writing spellings are distributed into 4 periods and they are read and analysed according to [Kilani 2019](http://widmaier-verlag.de/index.php?content=issue&isbn=978-3-943955-20-0).
 
@@ -58,16 +58,24 @@ You need Python 3.
 
 ### Installing
 
-EgyVoc is currently composed of two parts: 
-* a Java module that runs the Aligning Algorithm FAAL (see [FAAL](https://github.com/MKilani/FAAL))
-* a Python package
-
-The java module can be downlaoded from the github repository https://github.com/MKilani/EgyVoc/FAAL_module
-
 The python package can be installed through pip:
 
 ```shell
-python3 pip xxx
+python3 pip EgyVoc
+```
+
+Two commands need to be called. First, one needs to initialize the FAAL aligning algorithm (for FAAL, see [Kilani 2020](references/bibliography.md) and my github repository at [FAAL](https://github.com/MKilani/FAAL)). Then EgyVoc can be called. Here a minimal working example:
+
+```python
+from EgyVoc import EgyVoc
+from EgyVoc import initializeFAAL
+
+initializeFAAL()
+
+results = EgyVoc(SahidicWord = "ϩⲓⲃⲱⲓ", verbose = True )
+
+print("Results as a Python Dictionary:")
+print (results)
 ```
 
 ## Input
@@ -91,27 +99,27 @@ It can be omitted, in which case it is set by default to True.
 The Sahidic Form needs to be input as a Unicode string, e.g.:
 
 ```python
-SahidicForm = "ⲙⲉⲣⲕⲟⲟⲩⲧ"
+SahidicForm = "ⲥⲱⲧⲙ"
 ```
 
 ### Input - Egyptian Root
 
-The Egyptian Root needs to be input as a Unicode string. The unicode characters ꜣ, ꜥ, ṯ, ḏ, ḥ, ḫ, ẖ, š, q (not ḳ) must be used. 𓇋 is transliterated as j, 𓇋𓇋 as y. The character 𓏭 should not be transcribed, as it is usually a diacritic, not a consonant (see Kilani 2019). In the case of late Egyptian spellings with extra final w (i.e. w-orthography spellings), the w should be ignored and not transcribed, as it does not indicate a consonant (see Kilani xxx). Final consonants in weak verbs should be transcribed as j and w.
+The Egyptian Root needs to be input as a Unicode string. The unicode characters ꜣ, ꜥ, ṯ, ḏ, ḥ, ḫ, ẖ, š, q (not ḳ) must be used. 𓇋 is transliterated as j, 𓇋𓇋 as y. The character 𓏭 should not be transcribed, as it is usually a diacritic, not a consonant (see [Kilani 2019](references/bibliography.md)). In the case of late Egyptian spellings with extra final w (i.e. w-orthography spellings), the w should be ignored and not transcribed, as it does not indicate a consonant (see [Kilani 2019](references/bibliography.md)). Final consonants in weak verbs should be transcribed as j and w.
 
 ```python
-EgyptianRoot = "ⲙⲉⲣⲕⲟⲟⲩⲧ"xxx
+EgyptianRoot = "sḏm"
 ```
 
 ### Input - Group Writing
 
-Group Writing spellings should be organized chronologically according to their periods of attestations (see Kilani 2019), namely:
+Group Writing spellings should be organized chronologically according to their periods of attestations (see [Kilani 2019](references/bibliography.md)), namely:
 
 18th dyn. - Ramses II (included) = Period 1
 After Ramses II - 20th dyn (included) = Period 2
 21st dyn - 22nd dyn (included) = Period 3
 After 22nd dyn = Period 4
 
-They must be input as unicode strings and transliterated according to the system suggested in Kilani 2019. In particular:
+They must be input as unicode strings and transliterated according to the system suggested in [Kilani 2019](references/bibliography.md). In particular:
 
 * Cw groups should be transliterated as CU (where C = any consonant, also below)
 * Cꜣ groups should be transliterated as CA
@@ -124,10 +132,10 @@ They must be input as unicode strings and transliterated according to the system
 
 
 ```python
-GW_Period_1 = xxx
-GW_Period_2 =
-GW_Period_3 =
-GW_Period_4 =
+GW_Period_1 = "yA.mA"
+GW_Period_2 = "yA.mA"
+GW_Period_3 = "yU.mA"
+GW_Period_4 = "yU.mA"
 ```
 
 ## Output
@@ -142,6 +150,8 @@ The Output is a Python dictionary with the following structure. If any of the ma
 		'PhonemeClasses': 'string', 
 		'Stress': 'string', 
 		'VowelLength': 'string'
+		'EgyptianRoot': 'string', 
+		'PhonemesIPA': 'string'
 	}, 
 	'GroupWriting_Voc': {
 		'Regular': boolean, 
@@ -195,6 +205,7 @@ The Output is a Python dictionary with the following structure. If any of the ma
 		}, 
 		'Reconstructed_Form': [list_of_strings], 
 		'Phonemes': 'string', 
+		'PhonemesIPA': 'string',
 		'PhonemeClasses': 'string', 
 		'Stress': 'string', 
 		'VowelLength': 'string', 
@@ -202,11 +213,13 @@ The Output is a Python dictionary with the following structure. If any of the ma
 		'PeriodEarliestForm': int
 	}, 
 	'Reconstructed_Voc_Matrix': {
-		'Phonemes': 'string', 
+		'Phonemes': 'string',
+		'PhonemesIPA': 'string',
 		'PhonemeClasses': 'string', 
 		'Stress': 'string', 
 		'VowelLength': 'string'
 	}, 
+	'Reconstructed_VocalizationIPA': 'string',
 	'Reconstructed_Vocalization': 'string'
 }
 ```
@@ -216,15 +229,18 @@ More in particular:
 * **'ProtoCoptic': { }** - Reconstruction of the vocalization on the basis of the Coptic (for now only Sahidic) data.
 * **'GroupWriting_Voc': { }** - Reconstruction of the vocalization on the basis of the Spellings in Group Writing.
 * **'Reconstructed_Voc_Matrix': { }** - Data on the reconstruction of the vocalization combining the Coptic and Group Writing evidence.
-* **'Reconstructed_Vocalization': 'string'** - Final vocalized form. xxx scrive codice inc aso uno o l'altro mancano
+* **'Reconstructed_Vocalization': 'string'** - Final vocalized form.
+* **'Reconstructed_VocalizationIPA': 'string'** - Final vocalized form in IPA.
 
+* **'CopticForm': 'string'** - Coptic forms used in reconstroctign the Proto-Coptic vocalization - each form is separated by a comma ,
+* **'Phonemes': 'string'** - Phonemes composing the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
+* **'PhonemesIPA': 'string'** - Phonemes composing the reconstructed forms in IPA
+* **'PhonemeClasses': 'string'** - Classes of the phonemes composing the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
+* **'Stress': 'string'** - Stress patterns of the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
+* **'VowelLength': 'string'** - Length of the vowels composing the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
+* **'EgyptianRoot': 'string'** - Egyptian form - consonantal root.
 
-
-* **CopticForm': 'string'** - Coptic forms used in reconstroctign the Proto-Coptic vocalization - each form is separated by a comma ,
-* **Phonemes': 'string'** - Phonemes composing the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
-* **PhonemeClasses': 'string'** - Classes of the phonemes composing the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
-* **Stress': 'string'** - Stress patterns of the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
-* **VowelLength': 'string'** - Length of the vowels composing the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
+		
 * **'Regular': boolean** - It indicates if the algorithm has identified any irregularity in the forms of the input.
 * **'Earlier_Cons': [list_of_strings]** - Earlist version of the consonants that can be reconstructed on the basis of the Group Writing. spellings. List of strings where each conosnantla phoneme is an item, with '#' as first item and '$' as last item.
 * **'Reconstr_Vow': [list_of_strings]** - Vowels that can be reconstructed on the basis of the Group Writing spellings - see below: Group Writing Vocalization.
@@ -246,9 +262,11 @@ More in particular:
 
 The following conventions are employed in the fields of the output relating to Group Writing spellings.
 
-* U = back vowel, spelled with w (see Kilani 2019)
-* A = non-back vowel or no vowel, spelled with ꜣ or with nothing (see Kilani 2019)
-* Ɔ = A after /k/, possibly realized as a back vowel (see Kilani 2019)
+* ɥ = used as IPA transcription of 𓇋𓇋 = <y>, to distinguish it from 𓇋 = j 
+
+* U = back vowel, spelled with w (see [Kilani 2019](references/bibliography.md))
+* A = non-back vowel or no vowel, spelled with ꜣ or with nothing (see [Kilani 2019](references/bibliography.md))
+* Ɔ = A after /k/, possibly realized as a back vowel (see [Kilani 2019](references/bibliography.md))
 
 * [ = the vowel must be read after the associated consonant.
 * ] = the vowel must be read before the associated consonant.
@@ -259,11 +277,10 @@ The following conventions are employed in the fields of the output relating to G
 * | = phoneme separator
 * ⤫ = no vowel after the associated consonant
 * 0 = empty slot
-* a2 = vowel /a/ after /k/, possibly realized as a back vowel (see Kilani 2019)
-* ā2 = vowel /ā/ after /k/, possibly realized as a back vowel (see Kilani 2019)
+* a2 = vowel /a/ after /k/, possibly realized as a back vowel (see [Kilani 2019](references/bibliography.md))
+* ā2 = vowel /ā/ after /k/, possibly realized as a back vowel (see [Kilani 2019](references/bibliography.md))
 
 * VocCat: each number indicates a distinct vowel in a given position, the first slot being after the first consonant. The presence of the same number in more than one slot indicates that the corresponding vowel may be read and either of the slots (but not in both).
-
 
 ## Running the tests
 
@@ -271,9 +288,7 @@ The file EgyVoc_tester.py provides an implementation of 4 tests generating vocal
 
 The file EgyVoc_tester.py can be downloaded from the github repository https://github.com/MKilani/EgyVoc/EgyVoc_tester
 
-In order to run the test, first run the Java module EgyVoc_FAAL.jar .
-
-Then the file EgyVoc_tester.py can be run from command line with:
+The file EgyVoc_tester.py can be run from command line with:
 
 ```shell
 python3 EgyVoc_tester.py
@@ -282,10 +297,143 @@ python3 EgyVoc_tester.py
 The results should look like this:
 
 ```shell
-xxx
+- - - - - -
+-- Test 1 --
+
+* Transcription of the Coptic Form:
+
+Coptic form: ϩⲓⲃⲱⲓ
+Phonemes: h.j.b.ō.j
+Nr of vowels: 1
+Nr of consonants: 4
+Phoneme classes: C.C.C.V.C
+Stress: 0.0.0.S.0
+Vowel Length: 0.0.0.L.0
+
+----
+
+* ProtoCoptic Vocalization:
+
+CopticForm: ϩⲓⲃⲱⲓ
+EgyptianRoot: None
+
+Reconstruction - PhonemesIPA: h.ə.j.b.ā.j.ə
+Reconstruction - Phonemes: h.ə.j.b.ā.j.ə
+Reconstruction - Phoneme classes: C.V.C.C.V.C.V
+Reconstruction - Stress: 0.U.0.0.S.0.U
+Reconstruction - Vowel Length: 0.u.0.0.L.0.u
+
+----
+
+Results as a Python Dictionary:
+{'ProtoCoptic': {'CopticForm': 'ϩⲓⲃⲱⲓ', 'Phonemes': 'h.ə.j.b.ā.j.ə', 'PhonemeClasses': 'C.V.C.C.V.C.V', 'Stress': '0.U.0.0.S.0.U', 'VowelLength': '0.u.0.0.L.0.u', 'EgyptianRoot': 'None', 'PhonemesIPA': 'h.ə.j.b.ā.j.ə'}, 'GroupWriting_Voc': None, 'Reconstructed_Voc_Matrix': None, 'Reconstructed_Vocalization': None}
+
+- - - - - -
+-- Test 2 --
+
+* Transcription of the Coptic Form:
+
+Coptic form: ⲥⲱⲧⲙ
+Phonemes: s.ō.t.m
+Nr of vowels: 1
+Nr of consonants: 3
+Phoneme classes: C.V.C.C
+Stress: 0.S.0.0
+Vowel Length: 0.L.0.0
+
+----
+
+* ProtoCoptic Vocalization:
+
+CopticForm: ⲥⲱⲧⲙ
+EgyptianRoot: sḏm
+
+Reconstruction - PhonemesIPA: s.ā.ɟ.ə.m
+Reconstruction - Phonemes: s.ā.ḏ.ə.m
+Reconstruction - Phoneme classes: C.V.C.V.C
+Reconstruction - Stress: 0.S.0.U.0
+Reconstruction - Vowel Length: 0.L.0.u.0
+
+----
+
+Results as a Python Dictionary:
+{'ProtoCoptic': {'CopticForm': 'ⲥⲱⲧⲙ', 'EgyptianRoot': 'sḏm', 'PhonemesIPA': 's.ā.ɟ.ə.m', 'PhonemeClasses': 'C.V.C.V.C', 'Stress': '0.S.0.U.0', 'VowelLength': '0.L.0.u.0', 'Phonemes': 's.ā.ḏ.ə.m'}, 'GroupWriting_Voc': None, 'Reconstructed_Voc_Matrix': None, 'Reconstructed_Vocalization': None}
+
+- - - - - -
+-- Test 3 --
+
+* GroupWriting vocalization:
+
+Regular: True
+First attestation: yA.mA
+First attestation: Period 1
+
+Reconstruction - PhonemesIPA: ɥ.a1.m.ə|⤫
+Reconstruction - Phonemes: y.a1.m.ə|⤫
+Reconstruction - Phon. Classes: C.V.C.v
+Reconstruction - Stress: 0.S.0.U
+Reconstruction - Vowel Length: 0.S.0.u
+
+----
+
+Results as a Python Dictionary:
+{'ProtoCoptic': None, 'GroupWriting_Voc': {'Regular': True, 'Earlier_Cons': ['#', 'ɥ', 'm', '$'], 'Reconstr_Vow': ['#', '|a1', '|ə|⤫'], 'Aligned_Forms': {1: {'ID': 1, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|ā|i|ī|0', '|a|ā|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 2: {'ID': 2, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|i|ī|0', '|a|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 3: {'ID': 3, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ū|ō|o', '|a|e|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 4: {'ID': 4, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ō|o', '|a|e|ī|ē|0', '$'], 'VocCat': ['#', 0, 1, '$']}}, 'Reconstructed_Form': ['#', 'ɥ', '|a1', 'm', '|ə|⤫', '$'], 'Phonemes': 'y.a1.m.ə|⤫', 'PhonemesIPA': 'ɥ.a1.m.ə|⤫', 'PhonemeClasses': 'C.V.C.v', 'Stress': '0.S.0.U', 'VowelLength': '0.S.0.u', 'Earliest_Form': 'yA.mA', 'PeriodEarliestForm': 1}, 'Reconstructed_Voc_Matrix': None, 'Reconstructed_Vocalization': None}
+
+- - - - - -
+-- Test 4 --
+
+* Transcription of the Coptic Form:
+
+Coptic form: ϫⲁϫ
+Phonemes: c.a.c
+Nr of vowels: 1
+Nr of consonants: 2
+Phoneme classes: C.V.C
+Stress: 0.S.0
+Vowel Length: 0.S.0
+
+----
+
+* ProtoCoptic Vocalization:
+
+CopticForm: ϫⲁϫ
+EgyptianRoot: None
+
+Reconstruction - PhonemesIPA: c.i|u.c
+Reconstruction - Phonemes: c.i|u.c
+Reconstruction - Phoneme classes: C.V.C
+Reconstruction - Stress: 0.S.0
+Reconstruction - Vowel Length: 0.S.0
+
+----
+
+* GroupWriting vocalization:
+
+Regular: True
+First attestation: ṯU.ṯU
+First attestation: Period 2
+
+Reconstruction - PhonemesIPA: c.u.c.ə|⤫
+Reconstruction - Phonemes: ṯ.u.ṯ.ə|⤫
+Reconstruction - Phon. Classes: C.V.C.v
+Reconstruction - Stress: 0.S.0.U
+Reconstruction - Vowel Length: 0.S.0.u
+
+----
+
+* Joined reconstructed vocalization:
+
+Reconstructed vocalizationIPA: cuc
+Reconstructed vocalization: ṯuṯ
+
+Reconstruction - PhonemesIPA: c.u.c
+Reconstruction - Phonemes: ṯ.u.ṯ
+Reconstruction - Phon. Classes: C.u.C
+Reconstruction - Stress: 0.u.0
+Reconstruction - Vowel Length: 0.u.0
+
+----
+
+Results as a Python Dictionary:
+{'ProtoCoptic': {'CopticForm': 'ϫⲁϫ', 'Phonemes': 'c.i|u.c', 'PhonemeClasses': 'C.V.C', 'Stress': '0.S.0', 'VowelLength': '0.S.0', 'EgyptianRoot': 'None', 'PhonemesIPA': 'c.i|u.c'}, 'GroupWriting_Voc': {'Regular': True, 'Earlier_Cons': ['#', 'c', 'c', '$'], 'Reconstr_Vow': ['#', '|u', '|ə|⤫'], 'Aligned_Forms': {1: {'ID': 1, 'Irregularities': 'True', 'Form': ['#', '∅', '∅', '$'], 'Consonants': ['#', '∅', '∅', '$'], 'IPA_Cons': ['#', '∅', '∅', '$'], 'VocClass': ['#', '∅', '∅', '$'], 'VocClassEdit': ['#', '∅', '∅', '$'], 'VocRec': ['#', '∅', '∅', '$'], 'VocCat': ['#', '∅', '∅', '$']}, 2: {'ID': 2, 'Irregularities': 'False', 'Form': ['#', 'ṯU', 'ṯU', '$'], 'Consonants': ['#', 'ṯ', 'ṯ', '$'], 'IPA_Cons': ['#', 'c', 'c', '$'], 'VocClass': ['#', 'U', 'U', '$'], 'VocClassEdit': ['#', 'U]', ']U', '$'], 'VocRec': ['#', '|[|u|ū|ō', '|]|u|ū|ō', '$'], 'VocCat': ['#', 0, 1, '$']}, 3: {'ID': 3, 'Irregularities': 'False', 'Form': ['#', 'ṯA', 'ṯA', '$'], 'Consonants': ['#', 'ṯ', 'ṯ', '$'], 'IPA_Cons': ['#', 'c', 'c', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|e|ī|0', '|a|e|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 4: {'ID': 4, 'Irregularities': 'True', 'Form': ['#', '∅', '∅', '$'], 'Consonants': ['#', '∅', '∅', '$'], 'IPA_Cons': ['#', '∅', '∅', '$'], 'VocClass': ['#', '∅', '∅', '$'], 'VocClassEdit': ['#', '∅', '∅', '$'], 'VocRec': ['#', '∅', '∅', '$'], 'VocCat': ['#', '∅', '∅', '$']}}, 'Reconstructed_Form': ['#', 'c', '|u', 'c', '|ə|⤫', '$'], 'Phonemes': 'ṯ.u.ṯ.ə|⤫', 'PhonemesIPA': 'c.u.c.ə|⤫', 'PhonemeClasses': 'C.V.C.v', 'Stress': '0.S.0.U', 'VowelLength': '0.S.0.u', 'Earliest_Form': 'ṯU.ṯU', 'PeriodEarliestForm': 2}, 'Reconstructed_Voc_Matrix': {'Phonemes': 'ṯ.u.ṯ', 'PhonemesIPA': 'c.u.c', 'PhonemeClasses': 'C.u.C', 'Stress': '0.u.0', 'VowelLength': '0.u.0'}, 'Reconstructed_VocalizationIPA': 'cuc', 'Reconstructed_Vocalization': 'ṯuṯ'}
 ```
-
-
-
-
-
