@@ -45,7 +45,7 @@ Short stressed vowels
 
 Notes:
 
-<img src="https://github.com/MKilani/EgyVoc/blob/master/images/notes.jpg">
+<img src="https://github.com/MKilani/EgyVoc/blob/master/images/notes.jpg" width="200">
 ![](images/notes.jpg)
 
 Unstressed vowels are reduced to /ə/ during Period 2, or even earlier.
