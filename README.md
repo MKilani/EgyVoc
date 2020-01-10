@@ -1,4 +1,4 @@
-# EgyVoc : an automatic vocalizer for Ancient Egyptian
+# EgyVoc : an Automatic Vocalizer for Ancient Egyptian
 
 Version: 0.0.4
 
@@ -10,7 +10,7 @@ Release date: 08.01.2020
 
 #### How to cite
 
-Kilani Marwan, 2019, Coptic Orthographic Profiles - Sahidic profile, https://github.com/MKilani/Coptic_Orthographic_Profiles
+Kilani Marwan, 2019, EgyVoc : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
 
 ## Introduction
 
