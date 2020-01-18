@@ -264,8 +264,8 @@ The following conventions are employed in the fields of the output relating to G
 
 * ɥ = used as IPA transcription of 𓇋𓇋 = <y>, to distinguish it from 𓇋 = j 
 
-* ā2 = vowel /ā/ next to k, may be spelled with U already in Period 1 (see Kilani 2019)
-* a2 = vowel /a/ next to k, may be spelled with U already in Period 1 and 2 (see Kilani 2019)
+* ā2 = vowel /ā/ next to k, may be spelled with U already in Period 1 (see [Kilani 2019](references/bibliography.md))
+* a2 = vowel /a/ next to k, may be spelled with U already in Period 1 and 2 (see [Kilani 2019](references/bibliography.md))
 * a3 = vowel /a/ next to ʕ and etymological pharyngeals, it does not not undergo the shift /a/ > /o/
 
 * U = back vowel, spelled with w (see [Kilani 2019](references/bibliography.md))
@@ -281,8 +281,6 @@ The following conventions are employed in the fields of the output relating to G
 * | = phoneme separator
 * ⤫ = no vowel after the associated consonant
 * 0 = empty slot
-* a2 = vowel /a/ after /k/, possibly realized as a back vowel (see [Kilani 2019](references/bibliography.md))
-* ā2 = vowel /ā/ after /k/, possibly realized as a back vowel (see [Kilani 2019](references/bibliography.md))
 
 * VocCat: each number indicates a distinct vowel in a given position, the first slot being after the first consonant. The presence of the same number in more than one slot indicates that the corresponding vowel may be read and either of the slots (but not in both).
 
