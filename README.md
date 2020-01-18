@@ -80,7 +80,7 @@ print (results)
 
 ## Input
 
-The algorithm can takes a series of arguments as input, namely:
+The algorithm can take a series of arguments as input, namely:
 
 * SahidicForm
 * EgyptianRoot
