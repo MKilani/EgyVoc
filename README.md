@@ -372,8 +372,8 @@ Regular: True
 First attestation: yA.mA
 First attestation: Period 1
 
-Reconstruction - PhonemesIPA: ɥ.a1.m.ə|⤫
-Reconstruction - Phonemes: y.a1.m.ə|⤫
+Reconstruction - PhonemesIPA: ɥ.a.m
+Reconstruction - Phonemes: y.a.m
 Reconstruction - Phon. Classes: C.V.C.v
 Reconstruction - Stress: 0.S.0.U
 Reconstruction - Vowel Length: 0.S.0.u
