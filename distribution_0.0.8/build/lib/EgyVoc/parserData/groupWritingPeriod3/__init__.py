@@ -19,10 +19,10 @@ def parseGroupWriting_3(lexicalItem):
         newGroup = group
 
         if len(newGroup) == 1 and "#" not in newGroup and "$" not in newGroup:
-            newGroup = newGroup + "0"
+            newGroup = newGroup #+ "A"
 
         if len(newGroup) == 2 and "ʸ" in newGroup and "r" not in newGroup and "d" not in newGroup:
-            newGroup = newGroup + "0"
+            newGroup = newGroup #+ "A"
 
         if newGroup == "rʸ":
             newGroup = "rʸ-"

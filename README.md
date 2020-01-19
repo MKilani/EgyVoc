@@ -10,7 +10,7 @@ Release date: 08.01.2020
 
 #### How to cite
 
-Kilani Marwan, 2019, EgyVoc : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
+Kilani Marwan, 2019, EgyVoc 0.0.8 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
 
 ## Introduction
 
@@ -56,12 +56,16 @@ Unstressed vowels are reduced to /ə/ during Period 2, or even earlier.
 
 You need Python 3.
 
+Info how to downlaod it here:
+
+https://realpython.com/installing-python/
+
 ### Installing
 
 The python package can be installed through pip:
 
 ```shell
-pip3 install EgyVoc==0.0.7
+pip3 install EgyVoc==0.0.8
 ```
 
 Two commands need to be called. First, one needs to initialize the FAAL aligning algorithm (for FAAL, see [Kilani 2020](references/bibliography.md) and my github repository at [FAAL](https://github.com/MKilani/FAAL)). Then EgyVoc can be called. Here a minimal working example:

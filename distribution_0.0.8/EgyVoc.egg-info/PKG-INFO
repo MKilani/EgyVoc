@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: EgyVoc
-Version: 0.0.7
+Version: 0.0.8
 Summary: Vocaliazer for Ancient Egyptian
 Home-page: https://github.com/MKilani/EgyVoc
 Author: Marwan Kilani
@@ -8,7 +8,7 @@ Author-email: kilani.edu@gmail.com
 License: UNKNOWN
 Description: # EgyVoc : an Automatic Vocalizer for Ancient Egyptian
         
-        Version: 0.0.7
+        Version: 0.0.8
         
         Release date: 08.01.2020
         
@@ -18,7 +18,7 @@ Description: # EgyVoc : an Automatic Vocalizer for Ancient Egyptian
         
         #### How to cite
         
-        Kilani Marwan, 2019, EgyVoc : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
+        Kilani Marwan, 2019, EgyVoc 0.0.8 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
         
         ## Introduction
         
@@ -55,7 +55,7 @@ Description: # EgyVoc : an Automatic Vocalizer for Ancient Egyptian
         The python package can be installed through pip:
         
         ```shell
-        pip3 install EgyVoc==0.0.7
+        pip3 install EgyVoc==0.0.8
         ```
         
         Two commands need to be called. First, one needs to initialize the FAAL aligning algorithm (for FAAL, see [Kilani 2020](references/bibliography.md) and my github repository at [FAAL](https://github.com/MKilani/FAAL)). Then EgyVoc can be called. Here a minimal working example:
