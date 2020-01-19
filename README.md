@@ -366,20 +366,20 @@ Results as a Python Dictionary:
 
 * GroupWriting vocalization:
 
-Regular: True
+Regular: False
 First attestation: yA.mA
 First attestation: Period 1
 
-Reconstruction - PhonemesIPA: ɥ.a.m
-Reconstruction - Phonemes: y.a.m
-Reconstruction - Phon. Classes: C.V.C.v
-Reconstruction - Stress: 0.S.0.U
-Reconstruction - Vowel Length: 0.S.0.u
+Reconstruction - PhonemesIPA: £
+Reconstruction - Phonemes: £
+Reconstruction - Phon. Classes: £
+Reconstruction - Stress: £
+Reconstruction - Vowel Length: £
 
 ----
 
 Results as a Python Dictionary:
-{'ProtoCoptic': None, 'GroupWriting_Voc': {'Regular': True, 'Earlier_Cons': ['#', 'ɥ', 'm', '$'], 'Reconstr_Vow': ['#', '|a1', '|ə|⤫'], 'Aligned_Forms': {1: {'ID': 1, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|ā|i|ī|0', '|a|ā|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 2: {'ID': 2, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|i|ī|0', '|a|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 3: {'ID': 3, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ū|ō|o', '|a|e|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 4: {'ID': 4, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ō|o', '|a|e|ī|ē|0', '$'], 'VocCat': ['#', 0, 1, '$']}}, 'Reconstructed_Form': ['#', 'ɥ', '|a1', 'm', '|ə|⤫', '$'], 'Phonemes': 'y.a1.m.ə|⤫', 'PhonemesIPA': 'ɥ.a1.m.ə|⤫', 'PhonemeClasses': 'C.V.C.v', 'Stress': '0.S.0.U', 'VowelLength': '0.S.0.u', 'Earliest_Form': 'yA.mA', 'PeriodEarliestForm': 1}, 'Reconstructed_Voc_Matrix': None, 'Reconstructed_Vocalization': None}
+{'ProtoCoptic': None, 'GroupWriting_Voc': {'Regular': False, 'Earlier_Cons': ['#', 'ɥ', 'm', '$'], 'Reconstr_Vow': ['#', '|irregularity', '|⤫'], 'Aligned_Forms': {1: {'ID': 1, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|ā|i|ī|0', '|a|ā|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 2: {'ID': 2, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|i|ī|0', '|a|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 3: {'ID': 3, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ū|ō|o', '|a|e|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 4: {'ID': 4, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ō|o', '|a|e|ī|ē|0', '$'], 'VocCat': ['#', 0, 1, '$']}}, 'Reconstructed_Form': ['$'], 'Phonemes': '£', 'PhonemesIPA': '£', 'PhonemeClasses': '£', 'Stress': '£', 'VowelLength': '£', 'Earliest_Form': 'yA.mA', 'PeriodEarliestForm': 1}, 'Reconstructed_Voc_Matrix': None, 'Reconstructed_Vocalization': None}
 
 - - - - - -
 -- Test 4 --
@@ -415,11 +415,11 @@ Regular: True
 First attestation: ṯU.ṯU
 First attestation: Period 2
 
-Reconstruction - PhonemesIPA: c.u.c.ə|⤫
-Reconstruction - Phonemes: ṯ.u.ṯ.ə|⤫
-Reconstruction - Phon. Classes: C.V.C.v
-Reconstruction - Stress: 0.S.0.U
-Reconstruction - Vowel Length: 0.S.0.u
+Reconstruction - PhonemesIPA: c.u.c
+Reconstruction - Phonemes: ṯ.u.ṯ
+Reconstruction - Phon. Classes: C.V.C
+Reconstruction - Stress: 0.S.0
+Reconstruction - Vowel Length: 0.S.0
 
 ----
 
@@ -437,5 +437,5 @@ Reconstruction - Vowel Length: 0.u.0
 ----
 
 Results as a Python Dictionary:
-{'ProtoCoptic': {'CopticForm': 'ϫⲁϫ', 'Phonemes': 'c.i|u.c', 'PhonemeClasses': 'C.V.C', 'Stress': '0.S.0', 'VowelLength': '0.S.0', 'EgyptianRoot': 'None', 'PhonemesIPA': 'c.i|u.c'}, 'GroupWriting_Voc': {'Regular': True, 'Earlier_Cons': ['#', 'c', 'c', '$'], 'Reconstr_Vow': ['#', '|u', '|ə|⤫'], 'Aligned_Forms': {1: {'ID': 1, 'Irregularities': 'True', 'Form': ['#', '∅', '∅', '$'], 'Consonants': ['#', '∅', '∅', '$'], 'IPA_Cons': ['#', '∅', '∅', '$'], 'VocClass': ['#', '∅', '∅', '$'], 'VocClassEdit': ['#', '∅', '∅', '$'], 'VocRec': ['#', '∅', '∅', '$'], 'VocCat': ['#', '∅', '∅', '$']}, 2: {'ID': 2, 'Irregularities': 'False', 'Form': ['#', 'ṯU', 'ṯU', '$'], 'Consonants': ['#', 'ṯ', 'ṯ', '$'], 'IPA_Cons': ['#', 'c', 'c', '$'], 'VocClass': ['#', 'U', 'U', '$'], 'VocClassEdit': ['#', 'U]', ']U', '$'], 'VocRec': ['#', '|[|u|ū|ō', '|]|u|ū|ō', '$'], 'VocCat': ['#', 0, 1, '$']}, 3: {'ID': 3, 'Irregularities': 'False', 'Form': ['#', 'ṯA', 'ṯA', '$'], 'Consonants': ['#', 'ṯ', 'ṯ', '$'], 'IPA_Cons': ['#', 'c', 'c', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|e|ī|0', '|a|e|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 4: {'ID': 4, 'Irregularities': 'True', 'Form': ['#', '∅', '∅', '$'], 'Consonants': ['#', '∅', '∅', '$'], 'IPA_Cons': ['#', '∅', '∅', '$'], 'VocClass': ['#', '∅', '∅', '$'], 'VocClassEdit': ['#', '∅', '∅', '$'], 'VocRec': ['#', '∅', '∅', '$'], 'VocCat': ['#', '∅', '∅', '$']}}, 'Reconstructed_Form': ['#', 'c', '|u', 'c', '|ə|⤫', '$'], 'Phonemes': 'ṯ.u.ṯ.ə|⤫', 'PhonemesIPA': 'c.u.c.ə|⤫', 'PhonemeClasses': 'C.V.C.v', 'Stress': '0.S.0.U', 'VowelLength': '0.S.0.u', 'Earliest_Form': 'ṯU.ṯU', 'PeriodEarliestForm': 2}, 'Reconstructed_Voc_Matrix': {'Phonemes': 'ṯ.u.ṯ', 'PhonemesIPA': 'c.u.c', 'PhonemeClasses': 'C.u.C', 'Stress': '0.u.0', 'VowelLength': '0.u.0'}, 'Reconstructed_VocalizationIPA': 'cuc', 'Reconstructed_Vocalization': 'ṯuṯ'}
+{'ProtoCoptic': {'CopticForm': 'ϫⲁϫ', 'Phonemes': 'c.i|u.c', 'PhonemeClasses': 'C.V.C', 'Stress': '0.S.0', 'VowelLength': '0.S.0', 'EgyptianRoot': 'None', 'PhonemesIPA': 'c.i|u.c'}, 'GroupWriting_Voc': {'Regular': True, 'Earlier_Cons': ['#', 'c', 'c', '$'], 'Reconstr_Vow': ['#', '|u', '|⤫'], 'Aligned_Forms': {1: {'ID': 1, 'Irregularities': 'True', 'Form': ['#', '∅', '∅', '$'], 'Consonants': ['#', '∅', '∅', '$'], 'IPA_Cons': ['#', '∅', '∅', '$'], 'VocClass': ['#', '∅', '∅', '$'], 'VocClassEdit': ['#', '∅', '∅', '$'], 'VocRec': ['#', '∅', '∅', '$'], 'VocCat': ['#', '∅', '∅', '$']}, 2: {'ID': 2, 'Irregularities': 'False', 'Form': ['#', 'ṯU', 'ṯU', '$'], 'Consonants': ['#', 'ṯ', 'ṯ', '$'], 'IPA_Cons': ['#', 'c', 'c', '$'], 'VocClass': ['#', 'U', 'U', '$'], 'VocClassEdit': ['#', 'U]', ']U', '$'], 'VocRec': ['#', '|[|u|ū|ō', '|]|u|ū|ō', '$'], 'VocCat': ['#', 0, 1, '$']}, 3: {'ID': 3, 'Irregularities': 'False', 'Form': ['#', 'ṯA', 'ṯA', '$'], 'Consonants': ['#', 'ṯ', 'ṯ', '$'], 'IPA_Cons': ['#', 'c', 'c', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|e|ī|0', '|a|e|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 4: {'ID': 4, 'Irregularities': 'True', 'Form': ['#', '∅', '∅', '$'], 'Consonants': ['#', '∅', '∅', '$'], 'IPA_Cons': ['#', '∅', '∅', '$'], 'VocClass': ['#', '∅', '∅', '$'], 'VocClassEdit': ['#', '∅', '∅', '$'], 'VocRec': ['#', '∅', '∅', '$'], 'VocCat': ['#', '∅', '∅', '$']}}, 'Reconstructed_Form': ['#', 'c', '|u', 'c', '|⤫', '$'], 'Phonemes': 'ṯ.u.ṯ', 'PhonemesIPA': 'c.u.c', 'PhonemeClasses': 'C.V.C', 'Stress': '0.S.0', 'VowelLength': '0.S.0', 'Earliest_Form': 'ṯU.ṯU', 'PeriodEarliestForm': 2}, 'Reconstructed_Voc_Matrix': {'Phonemes': 'ṯ.u.ṯ', 'PhonemesIPA': 'c.u.c', 'PhonemeClasses': 'C.u.C', 'Stress': '0.u.0', 'VowelLength': '0.u.0'}, 'Reconstructed_VocalizationIPA': 'cuc', 'Reconstructed_Vocalization': 'ṯuṯ'}
 ```
