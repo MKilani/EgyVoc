@@ -3,11 +3,17 @@ from .parserData.groupWritingCombined import parseGroupWritingForms
 from .parserData.parserProtoCoptic import parseProtoCoptic
 from .parserData.joinReconstructions import joinReconstructions
 from .parserData.joinReconstructions import joinCopticRoot
+import os
 import subprocess
 
 def initializeFAAL():
+
+    
+
+    jarFolder = os.path.join(os.path.dirname(__file__), 'parserData', 'dependencies', 'FAAL_jar')
+
     process = subprocess.Popen('java -jar FAAL_jar_Global.jar',
-                               cwd='/usr/local/lib/python3.7/site-packages/EgyVoc/parserData/dependencies/FAAL_jar/',
+                               cwd=jarFolder,
                                stdout=subprocess.PIPE, shell=True)
 
     while True:

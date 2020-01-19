@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-def parseGroupWriting_3(lexicalItem):
+def parseGroupWriting_4(lexicalItem):
 
     #add indicator beginning (#) / end ($) of word
 
@@ -19,10 +19,10 @@ def parseGroupWriting_3(lexicalItem):
         newGroup = group
 
         if len(newGroup) == 1 and "#" not in newGroup and "$" not in newGroup:
-            newGroup = newGroup + "0"
+            newGroup = newGroup #+ "A"
 
         if len(newGroup) == 2 and "ʸ" in newGroup and "r" not in newGroup and "d" not in newGroup:
-            newGroup = newGroup + "0"
+            newGroup = newGroup #+ "A"
 
         if newGroup == "rʸ":
             newGroup = "rʸ-"
@@ -33,7 +33,6 @@ def parseGroupWriting_3(lexicalItem):
         if len(newGroup) > 2 and not ("ʸ" in newGroup):
             if len(newGroup) == 3 and newGroup[1] == "A":
                 newGroup = newGroup[0] + newGroup[1] + "." + newGroup[2] + "]"
-
 
             if len(newGroup) == 3 and newGroup[2] == "U":
                 newGroup = "[" + newGroup[0] + "U." + newGroup[1] + "]"
@@ -105,7 +104,7 @@ def parseGroupWriting_3(lexicalItem):
             consGroupIPA.append(group.replace("A", ""))
             vocGroup.append("Ɔ")
             vocGroupEdit.append("Ɔ")
-            vocGroupRec.append("|o|ō|ū")
+            vocGroupRec.append("|o|ō")
             IDVowel.append(IDVowel_nr)
             IDVowel_nr = IDVowel_nr + 1
 
@@ -117,7 +116,7 @@ def parseGroupWriting_3(lexicalItem):
             consGroupIPA.append(group.replace("U", ""))
             vocGroup.append("Ɔ")
             vocGroupEdit.append("Ɔ")
-            vocGroupRec.append("|o|ō|ū")
+            vocGroupRec.append("|o|ō")
             IDVowel.append(IDVowel_nr)
             IDVowel_nr = IDVowel_nr + 1
 
@@ -129,7 +128,7 @@ def parseGroupWriting_3(lexicalItem):
             consGroupIPA.append(group.replace("ʸ", ""))
             vocGroup.append("U")
             vocGroupEdit.append("U")
-            vocGroupRec.append("|ū|ō|o")
+            vocGroupRec.append("|ō|o")
             IDVowel.append(IDVowel_nr)
             IDVowel_nr = IDVowel_nr + 1
 
@@ -141,7 +140,7 @@ def parseGroupWriting_3(lexicalItem):
             consGroupIPA.append(group.replace("ȟ", ""))
             vocGroup.append("A")
             vocGroupEdit.append("A")
-            vocGroupRec.append("|a|ā|e|ī|0")
+            vocGroupRec.append("|a|ā|e|ī|ē|0")
             IDVowel.append(IDVowel_nr)
             IDVowel_nr = IDVowel_nr + 1
 
@@ -197,13 +196,13 @@ def parseGroupWriting_3(lexicalItem):
             if "A" in group:
                 vocGroup.append("A")
                 vocGroupEdit.append("A")
-                vocGroupRec.append("|a|e|ī|0")
+                vocGroupRec.append("|a|e|ī|ē|0")
                 IDVowel.append(IDVowel_nr)
                 IDVowel_nr = IDVowel_nr + 1
             else:
                 vocGroup.append("U")
                 vocGroupEdit.append("U")
-                vocGroupRec.append("|ū|ō|o")
+                vocGroupRec.append("|ō|o")
                 IDVowel.append(IDVowel_nr)
                 IDVowel_nr = IDVowel_nr + 1
 
@@ -230,8 +229,8 @@ def parseGroupWriting_3(lexicalItem):
         if "[" in transcription[i]:
             consGroup[i] = consGroup[i].replace("[", "")
             consGroupIPA[i] = consGroupIPA[i].replace("[", "")
-            vocGroupRec[i] = "|[" + vocGroupRec[i]
             vocGroupEdit[i] = "[" + vocGroupEdit[i]
+            vocGroupRec[i] = "|[" + vocGroupRec[i]
 
 
     for i in range(1, len(groups)):
@@ -249,13 +248,12 @@ def parseGroupWriting_3(lexicalItem):
             vocGroupRec[i] = "|<" + vocGroupRec[i]
             vocGroupEdit[i - 1] = vocGroupEdit[i] + ">"
             vocGroupEdit[i] = "<" + vocGroupEdit[i]
-            vocGroupRec[i - 1] = vocGroupRec[i - 1].replace("|ū", "").replace("|ā", "").replace("|ī", "").replace("|ō",
-                                                                                                                  "")
+            vocGroupRec[i - 1] = vocGroupRec[i - 1].replace("|ū", "").replace("|ā", "").replace("|ī", "").replace("|ō","").replace("|ē","")
 
             IDVowel[i - 1] = IDVowel[i]
 
         if "|⤫|]" in vocGroupRec[i]:
-            vocGroupRec[i - 1] = vocGroupRec[i - 1].replace("|ū", "").replace("|ā", "").replace("|ī", "").replace("|ō", "")
+            vocGroupRec[i - 1] = vocGroupRec[i - 1].replace("|ū", "").replace("|ā", "").replace("|ī", "").replace("|ō", "").replace("|ē","")
 
 
     if not "|[" in vocGroupRec[1] and not vocGroupRec[1] == "":
@@ -281,5 +279,5 @@ def parseGroupWriting_3(lexicalItem):
     parsedLexicalItem.append(vocGroupRec)
     parsedLexicalItem.append(IDVowel)
 
-    parsedLexicalItem.insert(0, 3)
+    parsedLexicalItem.insert(0, 4)
     return(parsedLexicalItem)
