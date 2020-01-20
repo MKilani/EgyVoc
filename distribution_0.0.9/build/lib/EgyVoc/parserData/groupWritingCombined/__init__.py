@@ -565,8 +565,9 @@ def parseGroupWritingForms(formsToParse):
         if finalCons == True:
             if "U" in vowelsDatasetClassPrePostEdited[i][1][-2]:
                 for i in range(0, len(vowelsDatasetClassPrePostEdited)):
+                    if "U" in vowelsDatasetClassPrePostEdited[i][1][-1]:
+                        vowelsDatasetClassPrePostEdited[i][1][-2] = "U"
                     vowelsDatasetClassPrePostEdited[i][1][-1] = "$"
-                    vowelsDatasetClassPrePostEdited[i][1][-2] = "U"
 
 
 

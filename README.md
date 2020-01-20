@@ -1,6 +1,6 @@
 # EgyVoc : an Automatic Vocalizer for Ancient Egyptian
 
-Version: 0.0.8
+Version: 0.0.9
 
 Release date: 08.01.2020
 
@@ -10,7 +10,7 @@ Release date: 08.01.2020
 
 #### How to cite
 
-Kilani Marwan, 2019, EgyVoc 0.0.8 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
+Kilani Marwan, 2019, EgyVoc 0.0.9 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
 
 ## Introduction
 
@@ -65,7 +65,7 @@ https://realpython.com/installing-python/
 The python package can be installed through pip:
 
 ```shell
-pip3 install EgyVoc==0.0.8
+pip3 install EgyVoc
 ```
 
 Two commands need to be called. First, one needs to initialize the FAAL aligning algorithm (for FAAL, see [Kilani 2020](references/bibliography.md) and my github repository at [FAAL](https://github.com/MKilani/FAAL)). Then EgyVoc can be called. Here a minimal working example:
@@ -303,6 +303,8 @@ python3 EgyVoc_tester.py
 The results should look like this:
 
 ```shell
+FAAL jar is running...
+
 - - - - - -
 -- Test 1 --
 
@@ -370,20 +372,20 @@ Results as a Python Dictionary:
 
 * GroupWriting vocalization:
 
-Regular: False
+Regular: True
 First attestation: yA.mA
 First attestation: Period 1
 
-Reconstruction - PhonemesIPA: £
-Reconstruction - Phonemes: £
-Reconstruction - Phon. Classes: £
-Reconstruction - Stress: £
-Reconstruction - Vowel Length: £
+Reconstruction - PhonemesIPA: ɥ.a.m
+Reconstruction - Phonemes: y.a.m
+Reconstruction - Phon. Classes: C.V.C
+Reconstruction - Stress: 0.S.0
+Reconstruction - Vowel Length: 0.S.0
 
 ----
 
 Results as a Python Dictionary:
-{'ProtoCoptic': None, 'GroupWriting_Voc': {'Regular': False, 'Earlier_Cons': ['#', 'ɥ', 'm', '$'], 'Reconstr_Vow': ['#', '|irregularity', '|⤫'], 'Aligned_Forms': {1: {'ID': 1, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|ā|i|ī|0', '|a|ā|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 2: {'ID': 2, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|i|ī|0', '|a|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 3: {'ID': 3, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ū|ō|o', '|a|e|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 4: {'ID': 4, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ō|o', '|a|e|ī|ē|0', '$'], 'VocCat': ['#', 0, 1, '$']}}, 'Reconstructed_Form': ['$'], 'Phonemes': '£', 'PhonemesIPA': '£', 'PhonemeClasses': '£', 'Stress': '£', 'VowelLength': '£', 'Earliest_Form': 'yA.mA', 'PeriodEarliestForm': 1}, 'Reconstructed_Voc_Matrix': None, 'Reconstructed_Vocalization': None}
+{'ProtoCoptic': None, 'GroupWriting_Voc': {'Regular': True, 'Earlier_Cons': ['#', 'ɥ', 'm', '$'], 'Reconstr_Vow': ['#', '|a', '|⤫'], 'Aligned_Forms': {1: {'ID': 1, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|ā|i|ī|0', '|a|ā|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 2: {'ID': 2, 'Irregularities': 'False', 'Form': ['#', 'yA', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'A', 'A', '$'], 'VocClassEdit': ['#', '[A', 'A', '$'], 'VocRec': ['#', '|[|a|i|ī|0', '|a|i|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 3: {'ID': 3, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ū|ō|o', '|a|e|ī|0', '$'], 'VocCat': ['#', 0, 1, '$']}, 4: {'ID': 4, 'Irregularities': 'False', 'Form': ['#', 'yU', 'mA', '$'], 'Consonants': ['#', 'y', 'm', '$'], 'IPA_Cons': ['#', 'ɥ', 'm', '$'], 'VocClass': ['#', 'U', 'A', '$'], 'VocClassEdit': ['#', '[U', 'A', '$'], 'VocRec': ['#', '|[|ō|o', '|a|e|ī|ē|0', '$'], 'VocCat': ['#', 0, 1, '$']}}, 'Reconstructed_Form': ['#', 'ɥ', '|a', 'm', '|⤫', '$'], 'Phonemes': 'y.a.m', 'PhonemesIPA': 'ɥ.a.m', 'PhonemeClasses': 'C.V.C', 'Stress': '0.S.0', 'VowelLength': '0.S.0', 'Earliest_Form': 'yA.mA', 'PeriodEarliestForm': 1}, 'Reconstructed_Voc_Matrix': None, 'Reconstructed_Vocalization': None}
 
 - - - - - -
 -- Test 4 --
