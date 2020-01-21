@@ -1,6 +1,6 @@
 # EgyVoc : an Automatic Vocalizer for Ancient Egyptian
 
-Version: 0.0.9
+Version: 0.0.10
 
 Release date: 08.01.2020
 
@@ -10,11 +10,11 @@ Release date: 08.01.2020
 
 #### How to cite
 
-Kilani Marwan, 2019, EgyVoc 0.0.9 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
+Kilani Marwan, 2019, EgyVoc 0.0.10 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
 
 ## Introduction
 
-EgyVoc uses Coptic forms and Group Writing spelling to authomatically reconstructs the Early New Kingdom vocalization of Ancient Egyptian words.
+EgyVoc uses Coptic forms and Group Writing spelling to automatically reconstructs the Early New Kingdom vocalization of Ancient Egyptian words.
 
 EgyVoc can reconstruct the vocalization on the basis of various combinations of data, namely:
 
@@ -23,11 +23,11 @@ EgyVoc can reconstruct the vocalization on the basis of various combinations of 
 * Group Writing spellings (with attestations from at least one period)
 * Sahidic form and Group Writing Spellings (and Egyptian consonantal root)
 
-As a general rule, the more data are provided, the more accurate the reconstruction will be. However, in some cases a complete reconstruction can be obtained just on the basis of the Sahidic form, or of just one Group Writing spellings, while in others it iwll not be possible to obtain a full, precise reconstruction even when all the data are available. Each word is different, and each case needs to be considered individually.
+As a general rule, the more data are provided, the more accurate the reconstruction will be. However, in some cases a complete reconstruction can be obtained just on the basis of the Sahidic form, or of just one Group Writing spellings, while in others it will not be possible to obtain a full, precise reconstruction even when all the data are available. Each word is different, and each case needs to be considered individually.
 
 The format of the input and of the output is discussed here below.
 
-The algorithm is able to recongnize irregularities in the correspondes between the forms - in that case, an error message is output instead of the reconstruction.
+The algorithm is able to recognize irregularities in the correspondences between the forms - in that case, an error message is output instead of the reconstruction.
 
 The possibility to use also data from other Coptic dialects and from W-orthography spellings (see [Kilani 2017](references/bibliography.md)) will also be included in future releases.
 
@@ -50,7 +50,7 @@ The python package can be installed through pip:
 pip3 install EgyVoc
 ```
 
-Two commands need to be called. First, one needs to initialize the FAAL aligning algorithm (for FAAL, see [Kilani 2020](references/bibliography.md) and my github repository at [FAAL](https://github.com/MKilani/FAAL)). Then EgyVoc can be called. Here a minimal working example:
+Two commands need to be called. First, one needs to initialize the FAAL aligning algorithm (for FAAL, see [Kilani 2020](references/bibliography.md) and my GitHub repository at [FAAL](https://github.com/MKilani/FAAL)). Then EgyVoc can be called. Here a minimal working example:
 
 ```python
 from EgyVoc import EgyVoc
@@ -77,7 +77,7 @@ The algorithm can takes a series of arguments as input, namely:
 * verbose
 
 All the arguments are optional.
-The argument "verbose" is a boolean that indicates if the algorithm should output data while performing the calcualtions or not.
+The argument "verbose" is a Boolean that indicates if the algorithm should output data while performing the calculations or not.
 It can be omitted, in which case it is set by default to True.
 
 ### Input - Sahidic Form
@@ -90,7 +90,7 @@ SahidicForm = "ⲥⲱⲧⲙ"
 
 ### Input - Egyptian Root
 
-The Egyptian Root needs to be input as a Unicode string. The unicode characters ꜣ, ꜥ, ṯ, ḏ, ḥ, ḫ, ẖ, š, q (not ḳ) must be used. 𓇋 is transliterated as j, 𓇋𓇋 as y. The character 𓏭 should not be transcribed, as it is usually a diacritic, not a consonant (see [Kilani 2019](references/bibliography.md)). In the case of late Egyptian spellings with extra final w (i.e. w-orthography spellings), the w should be ignored and not transcribed, as it does not indicate a consonant (see [Kilani 2019](references/bibliography.md)). Final consonants in weak verbs should be transcribed as j and w.
+The Egyptian Root needs to be input as a Unicode string. The Unicode characters ꜣ, ꜥ, ṯ, ḏ, ḥ, ḫ, ẖ, š, q (not ḳ) must be used. 𓇋 is transliterated as j, 𓇋𓇋 as y. The character 𓏭 should not be transcribed, as it is usually a diacritic, not a consonant (see [Kilani 2019](references/bibliography.md)). In the case of late Egyptian spellings with extra final w (i.e. w-orthography spellings), the w should be ignored and not transcribed, as it does not indicate a consonant (see [Kilani 2019](references/bibliography.md)). Final consonants in weak verbs should be transcribed as j and w.
 
 ```python
 EgyptianRoot = "sḏm"
@@ -105,16 +105,16 @@ After Ramses II - 20th dyn (included) = Period 2
 21st dyn - 22nd dyn (included) = Period 3
 After 22nd dyn = Period 4
 
-They must be input as unicode strings and transliterated according to the system suggested in [Kilani 2019](references/bibliography.md). In particular:
+They must be input as Unicode strings and transliterated according to the system suggested in [Kilani 2019](references/bibliography.md). In particular:
 
 * Cw groups should be transliterated as CU (where C = any consonant, also below)
 * Cꜣ groups should be transliterated as CA
 * the sign 𓏭 should be transliterated as ʸ
-* the group ​𓂓𓏤 should be transliterated as kU
-* the group ​𓂧𓏭 should be transliterated as dU
-* the group ​𓅓𓂝 should be transliterated as mA
-* the group ​𓏭𓂋𓏤 should be transliterated as ʸr
-* the group ​𓈖𓏥 should be transliterated as n-
+* the group 𓂓𓏤 should be transliterated as kU
+* the group 𓂧𓏭 should be transliterated as dU
+* the group 𓅓𓂝 should be transliterated as mA
+* the group 𓏭𓂋𓏤 should be transliterated as ʸr
+* the group 𓈖𓏥 should be transliterated as n-
 
 
 ```python
@@ -218,7 +218,7 @@ More in particular:
 * **'Reconstructed_Vocalization': 'string'** - Final vocalized form.
 * **'Reconstructed_VocalizationIPA': 'string'** - Final vocalized form in IPA.
 
-* **'CopticForm': 'string'** - Coptic forms used in reconstroctign the Proto-Coptic vocalization - each form is separated by a comma ,
+* **'CopticForm': 'string'** - Coptic forms used in reconstructing the Proto-Coptic vocalization - each form is separated by a comma ,
 * **'Phonemes': 'string'** - Phonemes composing the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
 * **'PhonemesIPA': 'string'** - Phonemes composing the reconstructed forms in IPA
 * **'PhonemeClasses': 'string'** - Classes of the phonemes composing the reconstructed forms - see [Sahidic Orthographic Profile](https://github.com/MKilani/Coptic_Orthographic_Profiles/tree/master/parsers/Sahidic).
@@ -228,7 +228,7 @@ More in particular:
 
 		
 * **'Regular': boolean** - It indicates if the algorithm has identified any irregularity in the forms of the input.
-* **'Earlier_Cons': [list_of_strings]** - Earlist version of the consonants that can be reconstructed on the basis of the Group Writing. spellings. List of strings where each conosnantla phoneme is an item, with '#' as first item and '$' as last item.
+* **'Earlier_Cons': [list_of_strings]** - Earliest version of the consonants that can be reconstructed on the basis of the Group Writing spellings. List of strings where each conosnantla phoneme is an item, with '#' as first item and '$' as last item.
 * **'Reconstr_Vow': [list_of_strings]** - Vowels that can be reconstructed on the basis of the Group Writing spellings - see below: Group Writing Vocalization.
 * **'Aligned_Forms': { }** - Python dictionary collecting the data for the reconstructions of the Group Writing spellings for the 4 periods.
 * **'ID': int** - ID of the Period of the attestation (1 = Period 1, 2 = Period 2, and so on).
@@ -240,7 +240,7 @@ More in particular:
 * **'VocClassEdit': [list_of_strings]** - Classes of the vowels in the Group Writing spellings - see below: Group Writing Vocalization.
 * **'VocRec': [list_of_strings]** - Vowels reconstructed on the basis of the Group Writing spellings - see below: Group Writing Vocalization.
 * **'VocCat': ['#', ints , '$']** - Organization of the vowels of the Group Writing spellings - see below: Group Writing Vocalization.
-* **'Reconstructed_Form': [list_of_strings]** - Vocalizaed form reconstructed on the basis of the Group Writing spellings.
+* **'Reconstructed_Form': [list_of_strings]** - Vocalized form reconstructed on the basis of the Group Writing spellings.
 * **'Earliest_Form': 'string'**	- Earliest attested form spelled in Group Writing.
 * **'PeriodEarliestForm': int**	- Period in which the earliest form is attested.
 	
@@ -252,7 +252,7 @@ The following conventions are employed in the fields of the output relating to G
 
 * ā2 = vowel /ā/ next to k, may be spelled with U already in Period 1 (see Kilani 2019)
 * a2 = vowel /a/ next to k, may be spelled with U already in Period 1 and 2 (see Kilani 2019)
-* a3 = vowel /a/ next to ʕ and etymological pharyngeals, it does not not undergo the shift /a/ > /o/
+* a3 = vowel /a/ next to ʕ and etymological pharyngeals, it does not undergo the shift /a/ > /o/
 
 * U = back vowel, spelled with w (see [Kilani 2019](references/bibliography.md))
 * A = non-back vowel or no vowel, spelled with ꜣ or with nothing (see [Kilani 2019](references/bibliography.md))

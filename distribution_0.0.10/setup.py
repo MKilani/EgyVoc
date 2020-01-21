@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="EgyVoc", # Replace with your own username
-    version="0.0.9",
+    version="0.0.10",
     author="Marwan Kilani",
     author_email="kilani.edu@gmail.com",
     description="Vocalizer for Ancient Egyptian",

@@ -5,6 +5,7 @@ EgyVoc/__init__.py
 EgyVoc.egg-info/PKG-INFO
 EgyVoc.egg-info/SOURCES.txt
 EgyVoc.egg-info/dependency_links.txt
+EgyVoc.egg-info/requires.txt
 EgyVoc.egg-info/top_level.txt
 EgyVoc/parserData/__init__.py
 EgyVoc/parserData/copticSahidic_1_0/__init__.py
