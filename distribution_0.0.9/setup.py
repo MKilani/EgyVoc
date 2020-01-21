@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.9",
     author="Marwan Kilani",
     author_email="kilani.edu@gmail.com",
-    description="Vocaliazer for Ancient Egyptian",
+    description="Vocalizer for Ancient Egyptian",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/MKilani/EgyVoc",
@@ -19,5 +19,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.',
+    install_requires=["py4j"],
+    python_requires='>=3.0',
 )
