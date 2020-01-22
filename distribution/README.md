@@ -1,6 +1,6 @@
 # EgyVoc : an Automatic Vocalizer for Ancient Egyptian
 
-Version: 0.0.10
+Version: 0.0.11
 
 Release date: 08.01.2020
 
@@ -10,7 +10,7 @@ Release date: 08.01.2020
 
 #### How to cite
 
-Kilani Marwan, 2019, EgyVoc 0.0.10 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
+Kilani Marwan, 2019, EgyVoc 0.0.11 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
 
 ## Introduction
 

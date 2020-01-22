@@ -1,6 +1,6 @@
 # EgyVoc : an Automatic Vocalizer for Ancient Egyptian
 
-Version: 0.0.10
+Version: 0.0.11
 
 Release date: 08.01.2020
 
@@ -10,7 +10,7 @@ Release date: 08.01.2020
 
 #### How to cite
 
-Kilani Marwan, 2019, EgyVoc 0.0.10 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
+Kilani Marwan, 2019, EgyVoc 0.0.11 : an Automatic Vocalizer for Ancient Egyptian, https://github.com/MKilani/EgyVoc
 
 ## Introduction
 
@@ -292,7 +292,7 @@ The following conventions are employed in the fields of the output relating to G
 
 The file EgyVoc_tester.py provides an implementation of 4 tests generating vocalizations on the basis of different sets of data.
 
-The file EgyVoc_tester.py can be downloaded from the GitHub repository https://github.com/MKilani/EgyVoc/EgyVoc_tester
+The file EgyVoc_tester.py can be downloaded from the GitHub repository https://github.com/MKilani/EgyVoc/blob/master/EgyVoc_tester.py
 
 The file EgyVoc_tester.py can be run from command line with:
 

@@ -20,5 +20,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=["py4j"],
+    install_requires=["gensim"],
+    install_requires=["json"],
     python_requires='>=3.0',
 )
