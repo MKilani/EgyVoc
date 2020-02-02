@@ -4,7 +4,7 @@ Version: 0.0.11
 
 Release date: 08.01.2020
 
-#### Authors
+#### Author
 
 * **Marwan Kilani** - Swiss National Science Foundation (Mobility Grant) - Freie Universität Berlin (2019-2020)
 
