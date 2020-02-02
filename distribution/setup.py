@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="EgyVoc", # Replace with your own username
-    version="0.0.10",
+    version="0.0.11",
     author="Marwan Kilani",
     author_email="kilani.edu@gmail.com",
     description="Vocalizer for Ancient Egyptian",
@@ -20,7 +20,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     install_requires=["py4j"],
-    install_requires=["gensim"],
-    install_requires=["json"],
     python_requires='>=3.0',
 )
